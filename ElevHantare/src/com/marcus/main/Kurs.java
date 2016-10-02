@@ -18,5 +18,10 @@ public class Kurs {
 		return "Ämne: " + kurs + ". Poäng: " + omfattning + ". Betyg: " + betyg;
 
 	}
+	
+	public String toStringFil(){
+		
+		return kurs + "\t" + omfattning + "\t" + betyg;
+	}
 
 }
