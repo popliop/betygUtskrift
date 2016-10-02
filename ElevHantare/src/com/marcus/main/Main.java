@@ -1,7 +1,8 @@
 package com.marcus.main;
 
 import com.marcus.main.SparaLadda;
-import java.io.IOException;
+
+import java.io.*;
 import java.util.HashMap;
 import java.util.Scanner;
 
@@ -13,10 +14,10 @@ public class Main {
 	static HashMap<Integer, Elev> elevMap = new HashMap<Integer, Elev>();
 	static Scanner input = new Scanner(System.in);
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException {
 
+		laddaElev("22");
 		nyElev("Marcus", 1337);
-		nyElev("Emil", 22);
 
 		geElevKurs("Matte", 300, 'A');
 		geElevKurs("Kemi", 300, 'A');
@@ -29,7 +30,7 @@ public class Main {
 
 		Integer newAccountNumber;
 		newAccountNumber = (Integer) elevNr;
-		System.out.println(newAccountNumber);
+
 		elevMap.put(newAccountNumber, elev);
 		System.out.println(elevMap);
 
@@ -44,6 +45,32 @@ public class Main {
 		System.out.println(elevMap.get(val).getElevNamn());
 		elevMap.get(val).addKurs(kurs, omfattning, betyg);
 		elevMap.get(val).visaKurser();
+
+	}
+
+	public static void laddaElev(String fil) throws IOException {
+
+		String tempFil;
+		tempFil = "C:\\Users\\Marcus\\Desktop\\" + fil + ".txt";
+
+		FileReader fr = new FileReader(tempFil);
+		BufferedReader br = new BufferedReader(fr);
+
+		String line = br.readLine();
+
+		String[] parts = line.split("\t");
+		elev = new Elev(parts[0], Integer.valueOf(parts[1]));
+		elevMap.put(Integer.valueOf(parts[1]), elev);
+
+		String[] kurser = null;
+
+		while ((line = br.readLine()) != null) {
+
+			kurser = line.split("\t");
+			elevMap.get(Integer.valueOf(parts[1])).addKurs(kurser[0], Integer.valueOf(kurser[1]), kurser[2].charAt(0));
+		}
+
+		br.close();
 
 	}
 

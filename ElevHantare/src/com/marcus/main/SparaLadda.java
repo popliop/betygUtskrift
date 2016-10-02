@@ -17,13 +17,13 @@ public class SparaLadda {
 
 	public void sparaElev() throws IOException {
 
-		String fil = "C:\\Users\\Marcus\\Desktop\\Elev.txt";
+		String fil = "C:\\Users\\Marcus\\Desktop\\"+ elev.getElevnr() + ".txt";
 
 		FileWriter fw = new FileWriter(fil);
 		BufferedWriter bw = new BufferedWriter(fw);
 		PrintWriter utfil = new PrintWriter(bw);
 
-		utfil.println(this.elev.getElevNamn());
+		utfil.println(elev.getElevNamn() + "\t" + elev.getElevnr());
 
 		for (Kurs object : elev.getKursLista()) {
 
@@ -34,5 +34,7 @@ public class SparaLadda {
 		utfil.close();
 
 	}
+	
+	
 
 }

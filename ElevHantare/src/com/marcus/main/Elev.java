@@ -42,5 +42,10 @@ public class Elev {
 	public String getElevNamn() {
 		return namn;
 	}
+	
+	@Override
+	public String toString(){
+		return namn + " " + elevnr;
+	}
 
 }
