@@ -5,26 +5,21 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Scanner;
 
-public class Main  {
-
-	
+public class Main {
 
 	// Fields
 	private static Elev elev;
-	
+
 	static HashMap<Integer, Elev> elevMap = new HashMap<Integer, Elev>();
 	static Scanner input = new Scanner(System.in);
-	
 
 	public static void main(String[] args) {
-		
+
 		nyElev("Marcus", 1337);
 		nyElev("Emil", 22);
 
 		geElevKurs("Matte", 300, 'A');
 		geElevKurs("Kemi", 300, 'A');
-		
-	
 
 	}
 
@@ -55,7 +50,7 @@ public class Main  {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
+
 	}
 
 }
