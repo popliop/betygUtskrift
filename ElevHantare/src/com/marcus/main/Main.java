@@ -40,11 +40,10 @@ public class Main {
 		Integer val;
 		System.out.println("Skriv in elevnr: ");
 		val = input.nextInt();
-
 		System.out.println("Valt konto: " + val);
 		System.out.println(elevMap.get(val).getElevNamn());
 		elevMap.get(val).addKurs(kurs, omfattning, betyg);
-		elevMap.get(val).visaKurser();
+		
 
 	}
 
@@ -76,7 +75,7 @@ public class Main {
 
 	public static void sparaElev() {
 		Integer val;
-		System.out.println("Skriv in vilken elevnr du vill spara: ");
+		System.out.println("Skriv in vilket elevnr du vill spara: ");
 		val = input.nextInt();
 		SparaLadda knull = new SparaLadda(elevMap.get(val));
 
