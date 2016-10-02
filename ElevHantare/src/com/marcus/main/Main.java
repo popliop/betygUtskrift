@@ -20,6 +20,7 @@ public class Main {
 
 		geElevKurs("Matte", 300, 'A');
 		geElevKurs("Kemi", 300, 'A');
+		sparaElev();
 
 	}
 
@@ -43,14 +44,20 @@ public class Main {
 		System.out.println(elevMap.get(val).getElevNamn());
 		elevMap.get(val).addKurs(kurs, omfattning, betyg);
 		elevMap.get(val).visaKurser();
+
+	}
+
+	public static void sparaElev() {
+		Integer val;
+		System.out.println("Skriv in vilken elevnr du vill spara: ");
+		val = input.nextInt();
 		SparaLadda knull = new SparaLadda(elevMap.get(val));
+
 		try {
 			knull.sparaElev();
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-
 	}
 
 }
