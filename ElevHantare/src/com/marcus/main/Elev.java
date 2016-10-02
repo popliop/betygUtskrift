@@ -8,7 +8,7 @@ public class Elev {
 	private int elevnr;
 	private String namn;
 
-	private ArrayList<Kurs> kurslista = new ArrayList<Kurs>();
+	public ArrayList<Kurs> kurslista = new ArrayList<Kurs>();
 
 	public Elev(String namn, int elevnr) {
 		this.namn = namn;
@@ -35,8 +35,14 @@ public class Elev {
 		return elevnr;
 	}
 
+	public ArrayList<Kurs> getKursLista() {
+		return kurslista;
+	}
+
 	public String getElevNamn() {
 		return namn;
 	}
+
+
 
 }
