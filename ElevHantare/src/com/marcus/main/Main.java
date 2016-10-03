@@ -22,7 +22,7 @@ public class Main {
 		geElevKurs("Matte", 300, 'A');
 		geElevKurs("Kemi", 300, 'A');
 		sparaElev();
-		System.out.println("knull");
+		System.out.println("test");
 
 	}
 
