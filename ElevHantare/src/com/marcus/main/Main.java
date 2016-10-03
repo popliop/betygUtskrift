@@ -23,6 +23,7 @@ public class Main {
 		geElevKurs("Kemi", 300, 'A');
 		sparaElev();
 		System.out.println("test");
+		System.out.println("test2");
 
 	}
 
