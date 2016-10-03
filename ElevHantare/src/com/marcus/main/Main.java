@@ -16,7 +16,13 @@ public class Main {
 
 	public static void main(String[] args) throws IOException {
 
-		laddaElev("22");
+		MainFrame frame = new MainFrame();
+	
+		frame.setVisible(true);
+		frame.setTitle("Elev Hantantare");
+		frame.setLocationRelativeTo(null);
+		
+		//laddaElev("22");
 		nyElev("Marcus", 1337);
 
 		geElevKurs("Matte", 300, 'A');
