@@ -17,7 +17,7 @@ public class SparaLadda {
 
 	public void sparaElev() throws IOException {
 
-		String fil = "C:\\Users\\Marcus\\Desktop\\"+ elev.getElevnr() + ".txt";
+		String fil = "C:\\Users\\Marcus\\Desktop\\" + elev.getElevnr() + ".txt";
 
 		FileWriter fw = new FileWriter(fil);
 		BufferedWriter bw = new BufferedWriter(fw);
@@ -34,7 +34,5 @@ public class SparaLadda {
 		utfil.close();
 
 	}
-	
-	
 
 }

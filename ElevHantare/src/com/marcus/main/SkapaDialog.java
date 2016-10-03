@@ -26,7 +26,7 @@ public class SkapaDialog extends JDialog {
 
 		setModalityType(ModalityType.APPLICATION_MODAL);
 		setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
-		
+
 		setModalExclusionType(ModalExclusionType.APPLICATION_EXCLUDE);
 		setType(Type.POPUP);
 		setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);

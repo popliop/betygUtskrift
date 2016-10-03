@@ -17,12 +17,12 @@ public class Main {
 	public static void main(String[] args) throws IOException {
 
 		MainFrame frame = new MainFrame();
-	
+
 		frame.setVisible(true);
 		frame.setTitle("Elev Hantantare");
 		frame.setLocationRelativeTo(null);
-		
-		//laddaElev("22");
+
+		// laddaElev("22");
 		nyElev("Marcus", 1337);
 
 		geElevKurs("Matte", 300, 'A');
@@ -51,7 +51,6 @@ public class Main {
 		System.out.println("Valt konto: " + val);
 		System.out.println(elevMap.get(val).getElevNamn());
 		elevMap.get(val).addKurs(kurs, omfattning, betyg);
-		
 
 	}
 
