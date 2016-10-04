@@ -13,10 +13,11 @@ public class Main {
 
 	static HashMap<Integer, Elev> elevMap = new HashMap<Integer, Elev>();
 	static Scanner input = new Scanner(System.in);
+	
 
 	public static void main(String[] args) throws IOException {
 		// init();
-
+		System.out.println("test");
 		laddaElev("11");
 		nyElev("Marcus", 22);
 
