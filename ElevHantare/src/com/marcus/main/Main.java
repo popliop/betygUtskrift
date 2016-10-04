@@ -15,22 +15,23 @@ public class Main {
 	static Scanner input = new Scanner(System.in);
 
 	public static void main(String[] args) throws IOException {
+		// init();
 
-		MainFrame frame = new MainFrame();
-
-		frame.setVisible(true);
-		frame.setTitle("Elev Hantantare");
-		frame.setLocationRelativeTo(null);
-
-		// laddaElev("22");
-		nyElev("Marcus", 1337);
+		laddaElev("11");
+		nyElev("Marcus", 22);
 
 		geElevKurs("Matte", 300, 'A');
 		geElevKurs("Kemi", 300, 'A');
 		sparaElev();
-		System.out.println("test");
-		System.out.println("test2");
 
+	}
+
+	// Starta fönster
+	public static void init() {
+		MainFrame frame = new MainFrame();
+		frame.setVisible(true);
+		frame.setTitle("Elev Hantantare");
+		frame.setLocationRelativeTo(null);
 	}
 
 	public static void nyElev(String namn, int elevNr) {
@@ -54,32 +55,6 @@ public class Main {
 
 	}
 
-	public static void laddaElev(String fil) throws IOException {
-
-		String tempFil;
-		tempFil = "C:\\Users\\Marcus\\Desktop\\" + fil + ".txt";
-
-		FileReader fr = new FileReader(tempFil);
-		BufferedReader br = new BufferedReader(fr);
-
-		String line = br.readLine();
-
-		String[] parts = line.split("\t");
-		elev = new Elev(parts[0], Integer.valueOf(parts[1]));
-		elevMap.put(Integer.valueOf(parts[1]), elev);
-
-		String[] kurser = null;
-
-		while ((line = br.readLine()) != null) {
-
-			kurser = line.split("\t");
-			elevMap.get(Integer.valueOf(parts[1])).addKurs(kurser[0], Integer.valueOf(kurser[1]), kurser[2].charAt(0));
-		}
-
-		br.close();
-
-	}
-
 	public static void sparaElev() {
 		Integer val;
 		System.out.println("Skriv in vilket elevnr du vill spara: ");
@@ -89,6 +64,16 @@ public class Main {
 		try {
 			knull.sparaElev();
 		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+
+	public static void laddaElev(String fil) {
+		try {
+			elevMap.put(Integer.valueOf(fil), SparaLadda.laddaElev(fil));
+
+		} catch (IOException e) {
+			System.err.println("Cant find file");
 			e.printStackTrace();
 		}
 	}
