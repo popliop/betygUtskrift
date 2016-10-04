@@ -17,7 +17,7 @@ public class Main {
 
 	public static void main(String[] args) throws IOException {
 		// init();
-		System.out.println("test");
+		System.out.println("test2");
 		laddaElev("11");
 		nyElev("Marcus", 22);
 
